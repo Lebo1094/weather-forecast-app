@@ -14,13 +14,13 @@
   </head>
   <body>
     <header>
-      <form>
-        <input type="search" placeholder="Enter city" required />
+      <form id="city-form">
+        <input type="search" placeholder="Enter city" id="city-input" />
         <input type="submit" value="Search" />
       </form>
     </header>
     <main>
-      <h1>City input</h1>
+      <h1 id="city">City input</h1>
       <div class="temperature-details">
         <p class="current-temperature">
           Wednesday 10:42 <br />
@@ -79,5 +79,6 @@
         hosted on Netlify</a
       >
     </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>

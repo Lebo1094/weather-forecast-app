@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -20,34 +21,37 @@
       </form>
     </header>
     <main>
-      <h1 id="city">City input</h1>
+      <h1 id="city"></h1>
       <div class="temperature-details">
         <p class="current-temperature">
           Wednesday 10:42 <br />
-          <span class="current-temp-icon">☀ </span
-          ><span class="current-temp-value">20℃ </span>
+          <span class="current-temp-icon">☀ </span> <br /><span
+            class="current-temp-value"
+            id="temp-value"
+          ></span>
+          <span class="current-temp-unit"><sup>℃</sup></span>
         </p>
         <div>
           <ul class="temp">
             <li>
               <strong>low</strong> <br />
-              10 ℃
+              ℃
             </li>
             <li>
               <strong>humidity</strong> <br />
-              64 %
+              <span id="humid"></span> %
             </li>
             <li>
               <strong> precipitation</strong> <br />
-              0 %
+              %
             </li>
             <li>
               <strong>high</strong> <br />
-              33 ℃
+              ℃
             </li>
             <li>
               <strong>windspeed </strong><br />
-              6 km/h
+              km/h
             </li>
           </ul>
         </div>

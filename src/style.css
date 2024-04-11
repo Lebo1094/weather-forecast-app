@@ -74,8 +74,12 @@ p {
   font-style: oblique;
 }
 
+.weather-description {
+  font-size: 20px;
+}
 .current-temp-icon {
-  font-size: 100px;
+  width: 60px;
+  height: 50px;
   margin-top: 2px;
   margin-right: 10px;
 }

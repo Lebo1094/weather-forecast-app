@@ -24,11 +24,9 @@
       <h1 id="city"></h1>
       <div class="temperature-details">
         <p class="current-temperature">
-          Wednesday 10:42 <br />
-          <span class="current-temp-icon">☀ </span> <br /><span
-            class="current-temp-value"
-            id="temp-value"
-          ></span>
+          <span id="time"></span>, <span id="description"></span> <br />
+          <span class="current-temp-icon" id="icon"></span> <br />
+          <span class="current-temp-value" id="temp-value"></span>
           <span class="current-temp-unit"><sup>℃</sup></span>
         </p>
         <div>
@@ -50,8 +48,8 @@
               ℃
             </li>
             <li>
-              <strong>windspeed </strong><br />
-              km/h
+              <strong>windspeed</strong> <br />
+              <span id="wind"></span> km/h
             </li>
           </ul>
         </div>

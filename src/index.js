@@ -21,6 +21,13 @@ function search(event) {
     cityElement.innerHTML = response.data.city;
   }
 
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+    return days[date.getDay()];
+  }
+
   function showForecast(response) {
     let lowElement = document.querySelector("#min");
     let highElement = document.querySelector("#max");
@@ -32,7 +39,22 @@ function search(event) {
       response.data.daily[0].temperature.maximum
     );
 
-    displayForecast();
+    let forecastHtml = "";
+
+    response.data.daily.forEach(function (day, index) {
+      if (index < 5) {
+        forecastHtml =
+          forecastHtml +
+          `
+  <div class="forecast-day">
+    <div class="forecast-date">${formatDay(day.time)}</div>
+    <img src ="${day.condition.icon_url}"class="forecast-icon"/> 
+    <div class="forecast-temperatures">${Math.round(day.temperature.day)}℃</div>
+  </div>`;
+      }
+    });
+    let forecast = document.querySelector("#forecast");
+    forecast.innerHTML = forecastHtml;
   }
 
   let apiKey = "fd465o10bb292abbf346etb26bb03720";
@@ -69,25 +91,6 @@ function formatDate(date) {
 
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
-}
-
-function displayForecast(response) {
-  let forecast = document.querySelector("#forecast");
-
-  let days = ["tue", "wed", "thur", "fri", "sat"];
-  let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
-  <div class="forecast-day">
-    <div class="forecast-date">${day}</div>
-    <div class="forecast-icon">☀</div>
-    <div class="forecast-temperatures">19℃</div>
-  </div>`;
-  });
-
-  forecast.innerHTML = forecastHtml;
 }
 
 let searchForm = document.querySelector("#city-form");

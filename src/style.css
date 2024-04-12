@@ -67,14 +67,6 @@ li {
   margin-top: 70px;
 }
 
-p {
-  font-size: 30px;
-  font-weight: 400px;
-  margin: auto;
-  font-style: oblique;
-  opacity: 50%;
-}
-
 .weather-description {
   font-size: 20px;
 }
@@ -88,6 +80,7 @@ p {
 .current-temp-value {
   font-size: 60px;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
 .current-temp-unit {
@@ -97,7 +90,9 @@ p {
 }
 .forecast {
   opacity: 60%;
-  margin-left: 40px;
+  margin: 40px 30px 40px;
+  display: flex;
+  justify-content: space-between;
 }
 footer {
   color: #141414;
